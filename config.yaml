@@ -1,0 +1,16 @@
+# config.yaml
+model: UNet
+
+resume: False
+batchsize: 4
+num_epochs: 100
+initial_lr: "1e-2"
+
+dataset:
+  root: "./datasets/IAT"
+
+weighted_loss:
+  white_lower: 0.7
+  white_upper: 1.0
+  white_weight: 0.8
+  black_weight: 0.2
