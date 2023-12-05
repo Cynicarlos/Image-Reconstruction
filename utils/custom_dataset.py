@@ -1,5 +1,6 @@
 import os
 from torch.utils.data import Dataset
+from torchvision import transforms
 from PIL import Image
 
 class CustomDataset(Dataset):
@@ -41,19 +42,16 @@ class CustomDataset(Dataset):
 
     def __len__(self):
         return len(self.Images)
-
-# if __name__ == "__main__": 
-#     data_transform = transforms.Compose([
-#         transforms.CenterCrop((1024,1024)),
-#         transforms.ToTensor()
-#     ])
-#     root = './datasets/IAT'
-#     train_loader, _ = get_dataloader.get_Train_Val_Dataloader(root,2, data_transform,True)
-#     for data, target, _ in train_loader:
-#         first_sample_data = data[0]
-#         first_sample_target = target[0]
-#         print((first_sample_target >= 0).sum())
-#         print((first_sample_target > 0.5).sum())
-#         break
-
+    
+'''
+if __name__ == "__main__": 
+    data_transform = transforms.Compose([
+        # transforms.CenterCrop((1024,1024)),
+        transforms.ToTensor()
+    ])
+    root = './datasets/SIDD'
+    train_dataset = CustomDataset(root=root, dataset_type='train', transform=data_transform)
+    image, GT, _ = train_dataset[77]
+    print(image.shape)
+'''
 

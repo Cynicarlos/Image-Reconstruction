@@ -92,4 +92,4 @@ class Helper:
     def RecordLossInfo(epoch, num_epochs, average_train_loss, average_val_loss, optimizer,loss_info_path='./loss.txt'):
         with open(loss_info_path, "a") as file:
             file.write(f"Epoch {epoch+1}/{num_epochs},Train Loss: {average_train_loss:.6f}, Valid Loss: {average_val_loss:.6f}, lr:{float(optimizer.param_groups[0]['lr']):.6f}" +"\n")
-        print(f"Epoch {epoch+1}/{num_epochs},Train Loss: {average_train_loss:.6f}, Valid Loss: {average_val_loss:.6f}, lr:{float(optimizer.param_groups[0]['lr']):.6f}")
+        # print(f"Epoch {epoch+1}/{num_epochs},Train Loss: {average_train_loss:.6f}, Valid Loss: {average_val_loss:.6f}, lr:{float(optimizer.param_groups[0]['lr']):.6f}")
